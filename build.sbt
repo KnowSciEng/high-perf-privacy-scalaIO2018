@@ -22,6 +22,7 @@ scalacOptions += "-Ypartial-unification"
 
 resolvers += Resolver.sonatypeRepo("releases")
 
-addCompilerPlugin("org.typelevel" %% "kind-projector" % "0.13.0")
+//addCompilerPlugin("org.typelevel" %% "kind-projector" % "0.13.0")
+addCompilerPlugin("org.typelevel" % "kind-projector" % "0.13.0" cross CrossVersion.full)
 
 scalafmtOnCompile := true
