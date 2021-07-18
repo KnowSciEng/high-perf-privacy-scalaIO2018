@@ -3,10 +3,10 @@ name := "high-perf"
 
 organization := "com.github.scala.io.talk"
 
-scalaVersion := "2.11.12"
+scalaVersion := "2.12.14"
 
-val matryoshkaVersion = "0.18.3"
-val sparkVersion = "2.3.1"
+val matryoshkaVersion = "0.21.3"
+val sparkVersion = "3.1.2"
 
 libraryDependencies ++= Seq(
 	"org.apache.spark" %% "spark-core" % sparkVersion,
@@ -22,6 +22,6 @@ scalacOptions += "-Ypartial-unification"
 
 resolvers += Resolver.sonatypeRepo("releases")
 
-addCompilerPlugin("org.spire-math" %% "kind-projector" % "0.9.7")
+addCompilerPlugin("org.typelevel" %% "kind-projector" % "0.13.0")
 
 scalafmtOnCompile := true

@@ -54,7 +54,8 @@ object matryoshkaEngine {
   // TODO same as com.github.scala.io.talk.ApplyPrivacyExpression.dataType without spark
   def transformSchema(schema: Fix[SchemaF],
                       privacyStrategies: PrivacyStrategies): Fix[SchemaF] = {
-    def alg: Algebra[SchemaF, Fix[SchemaF]] = s => changeSchema(privacyStrategies, Fix(s))
+    def alg: Algebra[SchemaF, Fix[SchemaF]] =
+      s => changeSchema(privacyStrategies, Fix(s))
 
     schema.cata(alg)
   }
@@ -64,7 +65,8 @@ object matryoshkaEngine {
     val s = schemaF.unFix
     privacyStrategies
       .find {
-        case (tags, _) => tags.size == s.metadata.tags.size && tags.toSet == s.metadata.tags.toSet
+        case (tags, _) =>
+          tags.size == s.metadata.tags.size && tags.toSet == s.metadata.tags.toSet
       }
       .fold(schemaF) { case (_, strategy) => Fix(strategy.schema(s)) }
   }

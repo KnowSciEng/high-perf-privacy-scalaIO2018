@@ -4,3 +4,9 @@ target/
 .idea/
 *.iml
 *.ipr
+
+.bsp/
+project/.boot/
+project/.ivy/
+project/.sbtboot/
+
